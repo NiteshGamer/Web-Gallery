@@ -1,0 +1,161 @@
+# ============================================================
+#  YOUR MUSIC LIBRARY — no code editing required!
+# ============================================================
+#
+# FASTEST WAY (great for adding many songs at once):
+#   1. Drop all your audio files into this "music" folder.
+#   2. Open "playlist-builder.html" (also in this folder) in
+#      your browser, select those same files, then click
+#      "Download playlist.txt".
+#   3. Replace this file with the one you just downloaded.
+#   Done — every visitor now hears all of them.
+#
+# MANUAL WAY (one song at a time):
+#   1. Drop the audio file (mp3, m4a, ogg, wav...) into this
+#      folder, right next to this playlist.txt file.
+#   2. Add ONE line below with that file's exact name.
+#   3. Save, upload/refresh — done.
+#
+# The display name is generated automatically from the file
+# name (underscores/dashes become spaces, words are
+# capitalized) — e.g. "our_first_dance.mp3" becomes
+# "Our First Dance".
+#
+# Want a custom display name instead? Add a " | " after the
+# filename followed by the title you want shown, e.g.:
+#   our_first_dance.mp3 | Our Very First Dance 💕
+#
+# Lines starting with # (like this one) are ignored, so feel
+# free to leave this guide here for next time.
+#
+# ------------------------------------------------------------
+# EXAMPLES (uncomment by removing the leading "# " once you've
+# actually added the matching file to this folder):
+#
+# our_first_dance.mp3
+# that_summer_song.mp3 | The Song From Our Trip
+# ------------------------------------------------------------
+
+# ============================================================
+#  YOUR MUSIC LIBRARY — no code editing required!
+# ============================================================
+#
+# Every line below is one song from your "music" folder.
+# Auto-generated titles come from the filename. To rename a
+# song, edit its line to read:  filename.mp3 | Custom Title
+#
+# Lines starting with # are ignored.
+# ------------------------------------------------------------
+
+2 bhai - Mohit Ladhotiya.m4a | 2 Bhai Mohit Ladhotiya
+2 hole - Masoom Sharma.m4a | 2 Hole Masoom Sharma
+2 Rani_spotdown.org.mp3 | 2 Rani Spotdown.Org
+2_Dada_Part_3_Official_Video_Masoom_Sharma,_Ashu_Twinkle_Ma.m4a | 2 Dada Part 3 Official Video Masoom Sharma, Ashu Twinkle Ma
+2_Number_Ka_Official_Video_D_Naveen_Fiza_Choudhary_New_Harya.m4a | 2 Number Ka Official Video D Naveen Fiza Choudhary New Harya
+4_AADMI_Official_Music_Video_Sumit_Parta_Mr_Maxxx_New_Ha.mp3 | 4 AADMI Official Music Video Sumit Parta Mr Maxxx New Ha
+Aaja_Meri_Gadi_Mein_Uttar_Kumar_Anjali_Raghav_Kehar_Kharkiya.m4a | Aaja Meri Gadi Mein Uttar Kumar Anjali Raghav Kehar Kharkiya
+Ambulance_Official_Video_Maana,_Heena_New_Rajasthani_Song_202.m4a | Ambulance Official Video Maana, Heena New Rajasthani Song 202
+Asle Rakhe Se - Masoom Sharma.m4a | Asle Rakhe Se Masoom Sharma
+Baddie_बरन_Official_Video_Mandys_Baddie_Bairan_SKY_New_Harya.m4a | Baddie बरन Official Video Mandys Baddie Bairan SKY New Harya
+Badmashi_Ashu_Twinkle_Jaya_Rohilla_Sanket_Upadhyay_Nandani.m4a | Badmashi Ashu Twinkle Jaya Rohilla Sanket Upadhyay Nandani
+Bairan_Animated_Love_Story_Banjaare_Official_Video_Banjaa.m4a | Bairan Animated Love Story Banjaare Official Video Banjaa
+Bairi_2_Official_Video_Virat,_Muskan_Pradeep_Solanki,_Saniya.m4a | Bairi 2 Official Video Virat, Muskan Pradeep Solanki, Saniya
+Bairi- virat.mp3 | Bairi Virat
+Bande_Khani_Virat,_Miss_Parul_Pradeep_Solanki,_Komal_Choudhary.m4a | Bande Khani Virat, Miss Parul Pradeep Solanki, Komal Choudhary
+Bau_Ji_Official_Video_Mohit_Ladhotiya_Fiza_Choudhary_New_Har.m4a | Bau Ji Official Video Mohit Ladhotiya Fiza Choudhary New Har
+Bawli - Elvish Yadav.m4a | Bawli Elvish Yadav
+Bera Ni - KD Desirock.m4a | Bera Ni KD Desirock
+Bhai_Ji_Official_Video_Sihag_Muzik_Vipin_Mehandipuria_Shiva.m4a | Bhai Ji Official Video Sihag Muzik Vipin Mehandipuria Shiva
+Big_Financer_Harry_Lather_Ashu_Twinkle_Pinna_Music_New_Hary.m4a | Big Financer Harry Lather Ashu Twinkle Pinna Music New Hary
+Bigad Gaya - Amanraj Gill.m4a | Bigad Gaya Amanraj Gill
+BIRTHDAY_Full_Video_Bintu_Pabra,_KP_Kundu_Love_Kataria,_Khush.m4a | BIRTHDAY Full Video Bintu Pabra, KP Kundu Love Kataria, Khush
+Black Ride (Official Music Video) Dhanda Nyoliwala _ Hammy Muzic.mp3 | Black Ride (Official Music Video) Dhanda Nyoliwala Hammy Muzic
+Black_Money_Official_Audio_Ammy_Chahar_Shiva_Choudhary_New.m4a | Black Money Official Audio Ammy Chahar Shiva Choudhary New
+Boom Shaka_spotdown.org.mp3 | Boom Shaka Spotdown.Org
+Champ_Official_Video_Vikram_Sarkar_Thought_VYRL_Haryanvi_Ha.m4a | Champ Official Video Vikram Sarkar Thought VYRL Haryanvi Ha
+Chandigarh ka chokra - Sunanda Sharma.m4a | Chandigarh Ka Chokra Sunanda Sharma
+Chitragupt_Official_Video_Song_Rohit_Sardhana_Harendra_Nagar.m4a | Chitragupt Official Video Song Rohit Sardhana Harendra Nagar
+Choudhary_Saab_Official_Music_Video_Harry_Lather_Muskan_Thaku.m4a | Choudhary Saab Official Music Video Harry Lather Muskan Thaku
+Classic_Connection_Music_Video_Khasa_Aala_Chahar_Anjali99.m4a | Classic Connection Music Video Khasa Aala Chahar Anjali99
+Control (Official Video) - Sinta Bhai  _ Muskan Thakur _ Riyaazi _ Latest Haryanvi Songs 2025.mp3 | Control (Official Video) Sinta Bhai Muskan Thakur Riyaazi Latest Haryanvi Songs 2025
+Cute Fruit (feat. Sakshi Dalal) - Harry Lather (youtube).m4a | Cute Fruit (Feat. Sakshi Dalal) Harry Lather (Youtube)
+Daaku_Official_Video_Devender_Ahlawat_New_Haryanvi_Song_2025.m4a | Daaku Official Video Devender Ahlawat New Haryanvi Song 2025
+Dad_Of_Town_Mohit_Ladhotiya_Shiva_Choudhary_Dj_Sky_Official.m4a | Dad Of Town Mohit Ladhotiya Shiva Choudhary Dj Sky Official
+Deadly Zone_spotdown.org.mp3 | Deadly Zone Spotdown.Org
+Degree_Official_Video_Bintu_Pabra_Shiva_Choudhary_Kaale_Rang.m4a | Degree Official Video Bintu Pabra Shiva Choudhary Kaale Rang
+Dhanda Nyoliwala - No Fluke (Official Music Video).m4a | Dhanda Nyoliwala No Fluke (Official Music Video)
+Dhanda Nyoliwala - Tension (Official Music Video).m4a | Dhanda Nyoliwala Tension (Official Music Video)
+Dhanda Nyoliwala - Underground (Music Video) _ Deepesh Goyal _ VYRL Haryanvi.mp3 | Dhanda Nyoliwala Underground (Music Video) Deepesh Goyal VYRL Haryanvi
+Dhanda_Nyoliwala_Paradox_Official_Music_Video_Dhanda_Nyoli.m4a | Dhanda Nyoliwala Paradox Official Music Video Dhanda Nyoli
+Dilbar - Sunanda Sharma.m4a | Dilbar Sunanda Sharma
+DURYODHAN_BHID_MAT_PROD_BY_SOUNDSCAPE_OFFICIAL_MUSIC_VIDE.m4a | DURYODHAN BHID MAT PROD BY SOUNDSCAPE OFFICIAL MUSIC VIDE
+Fake_Duniya_Official_Video_Ammy_Chahar_Shine_New_Haryanvi_So.m4a | Fake Duniya Official Video Ammy Chahar Shine New Haryanvi So
+Famous Jaat.m4a | Famous Jaat
+Financer_Bintu_Pabra_Pranjal_Dahiya_Shiva_Choudhary_Pellet.m4a | Financer Bintu Pabra Pranjal Dahiya Shiva Choudhary Pellet
+Fire - RP Singh, R Maan.m4a | Fire RP Singh, R Maan
+Forever - Dhanda Nyoliwala.m4a | Forever Dhanda Nyoliwala
+Formula - Hammy Muzic.m4a | Formula Hammy Muzic
+G_TOWN_Official_Video_Masoom_Sharma_Kamal_Digiya_Fiza_Chaudh.m4a | G TOWN Official Video Masoom Sharma Kamal Digiya Fiza Chaudh
+Gaadi 150 (Official Video) Vikram Sarkar _ New Haryanvi Songs Haryanavi 2025 _ Latest Haryanvi Songs.mp3 | Gaadi 150 (Official Video) Vikram Sarkar New Haryanvi Songs Haryanavi 2025 Latest Haryanvi Songs
+Gaadi nuye chalegi - Eshan bhati.m4a | Gaadi Nuye Chalegi Eshan Bhati
+Gaam - Khasa Aala Chahr.m4a | Gaam Khasa Aala Chahr
+Gaama Aale - Jerry, Bintu Pabra.mp3 | Gaama Aale Jerry, Bintu Pabra
+Gede - Vikram Sarkar.m4a | Gede Vikram Sarkar
+Gela Gaadi Me - Tushar Payla (youtube).m4a | Gela Gaadi Me Tushar Payla (Youtube)
+Gundagarh - Sukh Deswal.m4a | Gundagarh Sukh Deswal
+Gundagarh (Official Video) Masoom Sharma _ Ashu Twinkle _ Pulkit S, Manvi B _ New Haryanvi Song 2025.mp3 | Gundagarh (Official Video) Masoom Sharma Ashu Twinkle Pulkit S, Manvi B New Haryanvi Song 2025
+GUNDE BABE HONE THE - Harry Lather (youtube).m4a | GUNDE BABE HONE THE Harry Lather (Youtube)
+HI_FI_Official_Video_Masoom_Sharma_Renuka_Panwar_Dhruv_S_Ne.m4a | HI FI Official Video Masoom Sharma Renuka Panwar Dhruv S Ne
+Hooter_Baje_Yaar_Ka_Official_Video_Farmani_Naaz_Anil_Rawat_J.m4a | Hooter Baje Yaar Ka Official Video Farmani Naaz Anil Rawat J
+Hopeless_Official_Video_Amanraj_Gill_Prem_Lata_New_Haryanv.mp3 | Hopeless Official Video Amanraj Gill Prem Lata New Haryanv
+Jaat Bagdo - Khasa Aala Chahr.m4a | Jaat Bagdo Khasa Aala Chahr
+Jaat Drill - KhasaAalaChahr.m4a | Jaat Drill KhasaAalaChahr
+Jaat Intro - Ajay Bhagta.mp3 | Jaat Intro Ajay Bhagta
+Jankari - Tushar Payla.m4a | Jankari Tushar Payla
+Jat Jugadi (Official Video) Khasa Aala Chahar _ Pranjal Dahiya _ New Haryanvi Songs Haryanavi 2025.mp3 | Jat Jugadi (Official Video) Khasa Aala Chahar Pranjal Dahiya New Haryanvi Songs Haryanavi 2025
+Justin_Bieber_Official_Video_Elvish_Yadav_Isha_Malviya_Anu.m4a | Justin Bieber Official Video Elvish Yadav Isha Malviya Anu
+Kaala Asla - MC square.m4a | Kaala Asla MC Square
+Kaana ki bali - Khasa Aala Chahr.m4a | Kaana Ki Bali Khasa Aala Chahr
+Kaat_Harry_Lather_Vaishali_Chaudhary_Komal_Chaudhary_Pinna_M.m4a | Kaat Harry Lather Vaishali Chaudhary Komal Chaudhary Pinna M
+Kabze_Bintu_Pabra_Shiva_Choudhary_Pellet_Drum_Productions_.m4a | Kabze Bintu Pabra Shiva Choudhary Pellet Drum Productions
+Kamar_28_Ki_Official_Video_Manish_Sonipat_Aala_Bali_Sharma.m4a | Kamar 28 Ki Official Video Manish Sonipat Aala Bali Sharma
+Kamar_DJ_Pe_Official_Video_Manish_Sonipat_Aala_New_Haryanvi_S.m4a | Kamar DJ Pe Official Video Manish Sonipat Aala New Haryanvi S
+Kasht_Official_Video_Amanraj_Gill_Preeti_Choudhary_New_Harya.m4a | Kasht Official Video Amanraj Gill Preeti Choudhary New Harya
+Kishor Avastha - Shiva Chaudhary.m4a | Kishor Avastha Shiva Chaudhary
+KITAB_Official_Music_video_Mr_Dutt_ft_Vipin_Foji_Tanu_Rawat.m4a | KITAB Official Music Video Mr Dutt Ft Vipin Foji Tanu Rawat
+Lal dabbi - Amanraj gill.m4a | Lal Dabbi Amanraj Gill
+Listen - DevendraAhlawat.m4a | Listen DevendraAhlawat
+Mai_Meri_Gaadi_Official_Video_Naveen_Chaudhary_Shiva_Choudhar.m4a | Mai Meri Gaadi Official Video Naveen Chaudhary Shiva Choudhar
+Maruti_Official_Video_Dhanda_Nyoliwala_Miki_Malang_Ron_Likha.m4a | Maruti Official Video Dhanda Nyoliwala Miki Malang Ron Likha
+Maur ki koli - Masoom Sharma.m4a | Maur Ki Koli Masoom Sharma
+Mere_Karke_Official_Video_Khasa_Aala_Chahar_ft_Shiva_Choudhar.m4a | Mere Karke Official Video Khasa Aala Chahar Ft Shiva Choudhar
+Naam Chale (Official Video) Vikram Sarkar _ New Haryanvi Songs Haryanavi 2025 _Latest Haryanvi Songs.mp3 | Naam Chale (Official Video) Vikram Sarkar New Haryanvi Songs Haryanavi 2025 Latest Haryanvi Songs
+Naas ki raah - Mehul Mehndipuriya.m4a | Naas Ki Raah Mehul Mehndipuriya
+Nobody Came - Dhanda Nyoliwala.m4a | Nobody Came Dhanda Nyoliwala
+Number_82_Teri_Bhi_Umar_Thi_Choti_Vikram_Sarkar_New_Haryanvi.m4a | Number 82 Teri Bhi Umar Thi Choti Vikram Sarkar New Haryanvi
+PALLAD (Full Video) _ Harry Lather _ Sahil Sarpanch _ Latest Haryanvi Songs 2026.mp3 | PALLAD (Full Video) Harry Lather Sahil Sarpanch Latest Haryanvi Songs 2026
+Panchayat - Rohit Sardhana.m4a | Panchayat Rohit Sardhana
+Petrol_Official_Video_Bintu_Pabra_Deepshikha_Thakur_New_Ha.m4a | Petrol Official Video Bintu Pabra Deepshikha Thakur New Ha
+Protocol_Official_Video_Amanraj_Gill_Prachi,_Rashmi_Nishad_.m4a | Protocol Official Video Amanraj Gill Prachi, Rashmi Nishad
+Red_Rubicon_Official_Video_Jassi_Prince_Sumit_Mangali_Shine.m4a | Red Rubicon Official Video Jassi Prince Sumit Mangali Shine
+Rohtak_Ke_Albadi_Official_Video_Mohit_Ladhotiya,_Ishita_Malik.m4a | Rohtak Ke Albadi Official Video Mohit Ladhotiya, Ishita Malik
+Ror_Jaat_Official_Video_Ameet_Choudhary_D_Naveen_Sonika_Sin.m4a | Ror Jaat Official Video Ameet Choudhary D Naveen Sonika Sin
+Sarkar_Official_VideoR_Maan_Shiva_Choudhary,_Duryodhan_Rana_N.m4a | Sarkar Official VideoR Maan Shiva Choudhary, Duryodhan Rana N
+Sector_15_Music_Video_Khasa_Aala_Chahar_New_Haryanvi_Song_202.m4a | Sector 15 Music Video Khasa Aala Chahar New Haryanvi Song 202
+Sheikh - Virat.m4a | Sheikh Virat
+Sinta_Bhai_Haryana_Zone_Official_Music_Video_Hit_Music_G.m4a | Sinta Bhai Haryana Zone Official Music Video Hit Music G
+SpotiDownloader.com - Balkan Girl - Dhanda Nyoliwala.mp3 | SpotiDownloader.Com Balkan Girl Dhanda Nyoliwala
+SpotiDownloader.com - Not Guilty - Dhanda Nyoliwala.mp3 | SpotiDownloader.Com Not Guilty Dhanda Nyoliwala
+Takkar (Official Video) Masoom Sharma _ Manish Gurjar, Fiza Choudhary _ New Haryanvi Song 2025.mp3 | Takkar (Official Video) Masoom Sharma Manish Gurjar, Fiza Choudhary New Haryanvi Song 2025
+Tere Chakkar Mein - Khasa AalaChahr.m4a | Tere Chakkar Mein Khasa AalaChahr
+Thaari_Bhabhi_Official_Video_Sumit_Parta_New_Haryanvi_Song_2.m4a | Thaari Bhabhi Official Video Sumit Parta New Haryanvi Song 2
+Thari_Bolero_Harsh_Mudgil_Swara_Verma_Dekh_Dekh_Kai_Jale_Pad.m4a | Thari Bolero Harsh Mudgil Swara Verma Dekh Dekh Kai Jale Pad
+Total - RawMe Hooda.m4a | Total RawMe Hooda
+Udte_Teer_Jamaiya_Ke_Masoom_Sharma_Nidhi_Sharma_Nishchay_Shar.m4a | Udte Teer Jamaiya Ke Masoom Sharma Nidhi Sharma Nishchay Shar
+VILLAGE_SITE_Official_Video_Ammyy_Chahar_Shine_Heena_Devans.m4a | VILLAGE SITE Official Video Ammyy Chahar Shine Heena Devans
+Vomit On paper - Dhanda Nyoliwala.m4a | Vomit On Paper Dhanda Nyoliwala
+Waade_Official_Video_Tushar_Payla_Gyanender_Sardhana_Ishani.m4a | Waade Official Video Tushar Payla Gyanender Sardhana Ishani
+Yaar_Chale_Ni_Official_Video_Avy_Nyoli_New_Haryanvi_Rap_Song.m4a | Yaar Chale Ni Official Video Avy Nyoli New Haryanvi Rap Song
+Yaari On Top - Release (youtube).m4a | Yaari On Top Release (Youtube)
+Yaha_Ke_Bahubali_Official_Video_Masoom_Sharma_Amar_Karnawal.m4a | Yaha Ke Bahubali Official Video Masoom Sharma Amar Karnawal
+ysdEE7JR7fksngj5ruOp+i52TYO13Nyg.m4a | YsdEE7JR7fksngj5ruOp+I52TYO13Nyg

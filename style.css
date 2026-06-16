@@ -1,0 +1,318 @@
+/* =========================================
+   ROMANTIC GALLERY – FULLY RESPONSIVE
+   ========================================= */
+:root {
+    --rose: #c97d7d;
+    --rose-deep: #8b3a3a;
+    --rose-light: #f8e8e8;
+    --gold: #c9a96e;
+    --gold-light: #e8d5b7;
+    --cream: #fdf2f2;
+    --burgundy: #6b2d2d;
+    --shadow-soft: 0 4px 20px rgba(139,58,58,0.15);
+    --shadow-frame: 0 8px 40px rgba(107,45,45,0.25), 0 2px 8px rgba(139,58,58,0.1);
+    --shadow-gold: 0 0 30px rgba(201,169,110,0.4);
+    --transition-smooth: 0.45s cubic-bezier(0.4,0,0.2,1);
+    --transition-bounce: 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: 'Georgia','Times New Roman',serif;
+    background: linear-gradient(135deg,#fdf2f2 0%,#f8e8e8 25%,#fdf2f2 50%,#f5e0e0 75%,#fdf2f2 100%);
+    background-size:400% 400%;
+    animation:bgShift 20s ease infinite;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow-x:hidden;
+    -webkit-tap-highlight-color:transparent;
+    user-select:none;
+    position: relative;
+}
+
+@keyframes bgShift {
+    0%,100%{background-position:0% 50%}
+    25%{background-position:100% 0%}
+    50%{background-position:100% 100%}
+    75%{background-position:0% 100%}
+}
+
+/* ── Intro Splash ────────────────────────── */
+.intro-splash {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: radial-gradient(circle at center, #2c1a1a 0%, #0a0505 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.intro-splash.show {
+    opacity: 1;
+}
+.intro-splash.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+.intro-text {
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: #f0d6d6;
+    text-shadow: 0 0 20px #c97d7d, 0 0 40px #8b3a3a;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    animation: pulse 1.5s infinite alternate;
+}
+@keyframes pulse {
+    from { transform: scale(0.95); opacity: 0.9; }
+    to   { transform: scale(1.05); opacity: 1; }
+}
+
+/* ── Password Overlay ────────────────────── */
+.password-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(10, 5, 5, 0.92);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: overlayFadeIn 0.7s ease both;
+}
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.password-box {
+    background: #fdf2f2;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(139,58,58,0.6);
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    border: 2px solid var(--gold);
+    animation: boxRiseIn 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes boxRiseIn {
+    from { opacity: 0; transform: translateY(28px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes shakeX {
+    10%, 90% { transform: translateX(-2px); }
+    20%, 80% { transform: translateX(4px); }
+    30%, 50%, 70% { transform: translateX(-8px); }
+    40%, 60% { transform: translateX(8px); }
+}
+.password-box.shake {
+    animation: shakeX 0.5s ease;
+}
+.password-box h2 {
+    color: var(--burgundy);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+.password-box input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--rose-light);
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+.password-box input:focus {
+    border-color: var(--rose-deep);
+    box-shadow: 0 0 0 3px rgba(139,58,58,0.12);
+}
+.password-box button {
+    background: var(--burgundy);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.password-box button:hover {
+    background: #7d3535;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(107,45,45,0.35);
+}
+.password-box button:active {
+    transform: translateY(0) scale(0.97);
+}
+.error-msg {
+    color: #c0392b;
+    margin-top: 8px;
+    height: 20px;
+    font-size: 0.9rem;
+}
+
+/* ── Main App Container (hidden initially) ── */
+.app-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: appFadeIn 0.9s ease both;
+}
+@keyframes appFadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* (the rest of the gallery CSS is identical to the previous version)
+   I'll include it all for completeness but I'll reuse the exact same rules
+   as the last response (except the ones already defined above for intro/password).
+   I'll copy the full CSS but replace the :root / body and add the new sections.
+*/
+/* Particles */
+.particles-layer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.particle{position:absolute;font-size:18px;animation:floatUp linear infinite;opacity:0;filter:blur(0.5px);pointer-events:none}
+@keyframes floatUp{0%{transform:translateY(105vh) rotate(0deg) scale(0.3);opacity:0}10%{opacity:0.7}70%{opacity:0.5}90%{opacity:0.1}100%{transform:translateY(-15vh) rotate(360deg) scale(1.4);opacity:0}}
+
+/* Gallery title */
+.gallery-title{font-size:clamp(2rem,5vw,3.2rem);color:var(--burgundy);text-align:center;letter-spacing:0.04em;font-style:italic;text-shadow:0 2px 8px rgba(139,58,58,0.2);z-index:2;animation:titleReveal 1s ease 0.15s both}
+.gallery-title::after{content:'';display:block;width:60%;max-width:200px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:8px auto 0;border-radius:50%}
+.gallery-subtitle{font-size:0.95rem;color:var(--rose);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;z-index:2;animation:titleReveal 1s ease 0.35s both}
+@keyframes titleReveal{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+
+/* Gallery stage */
+.gallery-stage{position:relative;width:100%;min-height:500px;display:flex;align-items:center;justify-content:center;z-index:2}
+
+/* Main ornate frame (+25%) */
+.main-frame-wrapper{position:absolute;z-index:10;perspective:1200px}
+.ornate-frame{position:relative;width:clamp(280px,47.5vw,525px);aspect-ratio:4/5;max-height:75vh;background:#fdfaf7;border-radius:8px;box-shadow:var(--shadow-frame);border:6px solid #e8d5b7;outline:3px solid #c9a96e;outline-offset:-12px;padding:14px;transition:box-shadow var(--transition-smooth),transform 0.6s cubic-bezier(0.23,1,0.32,1);overflow:hidden;transform-style:preserve-3d;will-change:transform}
+.ornate-frame::before{content:'';position:absolute;inset:20px;border:2px solid rgba(201,169,110,0.5);border-radius:2px;pointer-events:none;z-index:2}
+.ornate-frame::after{content:'';position:absolute;inset:-10px;border-radius:14px;box-shadow:var(--shadow-gold);z-index:-1;opacity:0.6;pointer-events:none}
+.ornate-frame:hover{box-shadow:var(--shadow-frame),0 0 50px rgba(201,169,110,0.5)}
+.ornate-frame.tilting{transition:box-shadow var(--transition-smooth),transform 0.08s linear}
+.ornate-frame .frame-inner{width:100%;height:100%;overflow:hidden;border-radius:3px;background:#fdfaf7}
+.ornate-frame .frame-inner img{width:100%;height:100%;object-fit:cover;transition:opacity 0.35s,transform 0.35s}
+.ornate-frame.swapping .frame-inner img{animation:imagePop 0.5s cubic-bezier(0.34,1.56,0.64,1)}
+@keyframes imagePop{0%{transform:scale(1);opacity:1}40%{transform:scale(0.88);opacity:0.4}60%{transform:scale(0.9);opacity:0.5}100%{transform:scale(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.ornate-frame{transition:box-shadow var(--transition-smooth)}}
+
+/* Corner ornaments */
+.frame-corner{position:absolute;width:28px;height:28px;z-index:3;pointer-events:none;opacity:0.7}
+.frame-corner::before,.frame-corner::after{content:'';position:absolute;background:var(--gold);border-radius:1px}
+.frame-corner.tl{top:-2px;left:-2px}.frame-corner.tr{top:-2px;right:-2px}
+.frame-corner.bl{bottom:-2px;left:-2px}.frame-corner.br{bottom:-2px;right:-2px}
+.frame-corner::before{width:22px;height:2px}.frame-corner::after{width:2px;height:22px}
+.frame-corner.tl::before{top:0;left:0}.frame-corner.tl::after{top:0;left:0}
+.frame-corner.tr::before{top:0;right:0}.frame-corner.tr::after{top:0;right:0}
+.frame-corner.bl::before{bottom:0;left:0}.frame-corner.bl::after{bottom:0;left:0}
+.frame-corner.br::before{bottom:0;right:0}.frame-corner.br::after{bottom:0;right:0}
+
+/* Thumbnails */
+.thumbnail-item{position:absolute;width:clamp(70px,12vw,105px);aspect-ratio:4/5;border-radius:6px;cursor:pointer;transition:var(--transition-bounce);box-shadow:0 3px 15px rgba(139,58,58,0.18);border:3px solid #fdfaf7;outline:1px solid rgba(201,169,110,0.4);z-index:5;overflow:hidden;background:#fdfaf7;opacity:0.85;animation:thumbDevelop 0.6s ease backwards}
+@keyframes thumbDevelop{from{opacity:0;filter:blur(8px) saturate(0.6)}to{opacity:0.85;filter:blur(0) saturate(1)}}
+.thumbnail-item:hover{transform:scale(1.12) translateY(-6px)!important;box-shadow:0 8px 28px rgba(139,58,58,0.3),0 0 20px rgba(201,169,110,0.5);z-index:15;opacity:1;border-color:#fff;outline-color:var(--gold)}
+.thumbnail-item:active{transform:scale(0.95)!important;transition:0.15s}
+.thumbnail-item img{width:100%;height:100%;object-fit:cover;pointer-events:none;border-radius:3px}
+.thumbnail-item .delete-badge{position:absolute;top:4px;right:4px;width:20px;height:20px;border-radius:50%;background:rgba(139,58,58,0.85);color:#fff;font-size:11px;line-height:20px;text-align:center;cursor:pointer;z-index:6;opacity:0;transition:opacity 0.25s;font-family:Arial,sans-serif}
+.thumbnail-item:hover .delete-badge{opacity:1}
+.delete-badge:hover{background:#c0392b;transform:scale(1.2)}
+.thumbnail-item.is-main-thumb{opacity:0;pointer-events:none;transition:0.3s}
+@media(prefers-reduced-motion:reduce){.thumbnail-item{animation:none}}
+
+/* Controls */
+.controls-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;z-index:10;margin-top:4px}
+.btn{position:relative;padding:12px 26px;border:none;border-radius:30px;cursor:pointer;font-family:'Georgia',serif;font-size:0.95rem;letter-spacing:0.04em;transition:var(--transition-smooth);display:flex;align-items:center;gap:8px;touch-action:manipulation;overflow:hidden}
+.btn::after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);transform:skewX(-20deg);transition:left 0.6s ease}
+.btn:hover::after{left:130%}
+.btn-upload{background:var(--burgundy);color:#fff;box-shadow:0 4px 16px rgba(107,45,45,0.35)}
+.btn-upload:hover{background:#7d3535;transform:translateY(-2px);box-shadow:0 6px 22px rgba(107,45,45,0.45)}
+.btn-upload:active{transform:scale(0.96)}
+.btn-reset{background:transparent;color:var(--rose-deep);border:2px solid var(--rose)}
+.btn-reset:hover{background:rgba(201,125,125,0.1);border-color:var(--rose-deep);transform:translateY(-2px)}
+.btn-reset:active{transform:scale(0.96)}
+.btn-icon{font-size:1.2rem}
+
+/* Toast */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--burgundy);color:#fff;padding:12px 28px;border-radius:30px;font-family:'Georgia',serif;font-size:0.9rem;z-index:100;pointer-events:none;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 6px 20px rgba(107,45,45,0.4)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* Drag & drop hint overlay */
+.drop-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;background:rgba(253,242,242,0.88);backdrop-filter:blur(4px);border-radius:16px;z-index:50;font-size:clamp(1.1rem,3vw,1.5rem);color:var(--burgundy);font-style:italic;opacity:0;pointer-events:none;transition:opacity 0.25s ease}
+.drop-hint.show{opacity:1}
+
+/* Upload loading overlay */
+.upload-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(253,242,242,0.92);border-radius:16px;z-index:60;opacity:0;pointer-events:none;transition:opacity 0.25s ease;font-style:italic;color:var(--burgundy)}
+.upload-loading.show{opacity:1;pointer-events:all}
+.spinner{width:38px;height:38px;border:3px solid var(--rose-light);border-top-color:var(--rose-deep);border-radius:50%;animation:spin 0.85s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.spinner{animation-duration:2s}}
+
+/* Music panel (unchanged from previous) */
+.music-panel{position:fixed;top:20px;right:20px;z-index:200;display:flex;flex-direction:column;align-items:stretch;background:rgba(253,242,242,0.9);backdrop-filter:blur(12px);border-radius:20px;box-shadow:0 4px 25px rgba(139,58,58,0.25);border:1px solid rgba(201,169,110,0.5);padding:10px;min-width:240px;max-width:300px;transition:box-shadow 0.4s}
+.music-panel>*{margin-bottom:6px}
+.music-panel>*:last-child{margin-bottom:0}
+.music-toggle{background:none;border:none;font-size:1.8rem;cursor:pointer;align-self:center;transition:transform 0.2s;border-radius:50%}
+.music-toggle:hover{transform:scale(1.1)}
+.music-toggle:active{transform:scale(0.92)}
+.music-toggle.playing{animation:toggleGlow 2.2s ease-in-out infinite}
+@keyframes toggleGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(201,169,110,0))}50%{filter:drop-shadow(0 0 9px rgba(201,169,110,0.85))}}
+.music-controls{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:0 4px}
+.volume-slider{-webkit-appearance:none;flex:1;height:4px;border-radius:4px;background:var(--rose-light);outline:none;transition:background 0.2s}
+.volume-slider::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--rose-deep);box-shadow:0 0 6px rgba(139,58,58,0.5);cursor:pointer;transition:transform 0.15s}
+.volume-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+.playlist-btn,.upload-audio-label{background:none;border:none;font-size:1.3rem;cursor:pointer;transition:transform 0.2s;padding:2px}
+.playlist-btn:hover,.upload-audio-label:hover{transform:scale(1.1)}
+.playlist-panel{max-height:0;overflow-y:auto;transition:max-height 0.3s ease;background:rgba(255,245,245,0.6);border-radius:10px;scrollbar-width:thin;scrollbar-color:var(--gold) transparent}
+.playlist-panel.open{max-height:180px}
+.playlist-panel::-webkit-scrollbar{width:5px}
+.playlist-panel::-webkit-scrollbar-track{background:transparent}
+.playlist-panel::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px}
+.playlist-header{font-size:0.8rem;font-weight:bold;color:var(--burgundy);padding:4px 8px;border-bottom:1px solid var(--gold-light)}
+.playlist-tracks{list-style:none;padding:4px}
+.playlist-tracks li{display:flex;justify-content:space-between;align-items:center;padding:5px 8px;border-radius:6px;cursor:pointer;font-size:0.75rem;color:var(--burgundy);transition:background 0.2s}
+.playlist-tracks li:hover{background:rgba(201,169,110,0.15)}
+.playlist-tracks li.active{background:rgba(201,169,110,0.3);font-weight:bold}
+.track-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center;gap:5px}
+.track-badge{font-size:0.8em;flex-shrink:0}
+.track-delete{background:none;border:none;color:var(--rose-deep);font-size:1rem;cursor:pointer;padding:0 4px;opacity:0.7}
+.track-delete:hover{opacity:1;transform:scale(1.2)}
+.playlist-empty{text-align:center;font-size:0.7rem;color:var(--rose);padding:8px;display:none}
+.playlist-panel:not(:has(li)) .playlist-empty{display:block}
+.playlist-hint{font-size:0.62rem;line-height:1.4;color:var(--rose);text-align:center;padding:6px 10px 2px;border-top:1px solid rgba(201,169,110,0.25);margin-top:2px}
+.playlist-hint code{background:rgba(201,169,110,0.18);border-radius:4px;padding:0 4px;font-family:monospace}
+.player-secondary{display:flex;align-items:center;justify-content:space-between;padding:4px 8px;gap:4px}
+.ctrl-btn{background:none;border:none;font-size:1.2rem;cursor:pointer;transition:transform 0.2s}
+.ctrl-btn:hover{transform:scale(1.15)}
+.ctrl-btn:active{transform:scale(0.9)}
+.now-playing{font-size:0.7rem;color:var(--rose-deep);flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* Equalizer visualizer */
+.visualizer{display:inline-flex;align-items:flex-end;gap:2px;height:12px;flex-shrink:0}
+.visualizer span{display:block;width:3px;border-radius:2px;background:var(--rose-deep);height:25%;opacity:0.45;animation:visBounce 1.1s ease-in-out infinite;animation-play-state:paused}
+.visualizer span:nth-child(1){animation-delay:0s}
+.visualizer span:nth-child(2){animation-delay:0.12s}
+.visualizer span:nth-child(3){animation-delay:0.24s}
+.visualizer span:nth-child(4){animation-delay:0.36s}
+.visualizer.playing span{opacity:1;animation-play-state:running}
+@keyframes visBounce{0%,100%{height:20%}50%{height:100%}}
+@media(prefers-reduced-motion:reduce){.visualizer span{animation:none;height:40%}.music-toggle.playing{animation:none}}
+
+/* Responsive music */
+@media(max-width:480px){.music-panel{top:10px;right:10px;min-width:200px;max-width:240px;padding:6px}.music-toggle{font-size:1.5rem}.volume-slider{width:50px}.now-playing{font-size:0.65rem}.ctrl-btn{font-size:1rem}}
+
+/* Gallery responsive (unchanged) */
+@media(max-width:768px){.gallery-stage{min-height:450px;padding:10px 0}.ornate-frame{width:clamp(275px,68.75vw,375px);max-height:75vh;border-width:4px;outline-offset:-8px;padding:10px}.ornate-frame::before{inset:14px}.thumbnail-item{width:clamp(55px,18vw,80px);border-width:2px}.frame-corner{width:20px;height:20px}.frame-corner::before{width:16px;height:1.5px}.frame-corner::after{width:1.5px;height:16px}.gallery-title{font-size:1.6rem}.gallery-subtitle{font-size:0.75rem}.btn{padding:10px 20px;font-size:0.82rem}}
+@media(max-width:480px){.gallery-stage{min-height:400px}.ornate-frame{width:clamp(225px,77.5vw,300px);max-height:75vh;padding:7px;border-width:3px;outline-offset:-6px}.ornate-frame::before{inset:10px;border-width:1px}.thumbnail-item{width:clamp(48px,20vw,65px);border-radius:4px}.btn{padding:8px 16px;font-size:0.75rem;border-radius:22px}.frame-corner{width:16px;height:16px}.frame-corner::before{width:12px;height:1.5px}.frame-corner::after{width:1.5px;height:12px}}
+@media(prefers-reduced-motion:reduce){.particle{animation-duration:0s!important}.ornate-frame.swapping .frame-inner img{animation:none}}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playlist Builder — Eternal Moments</title>
+<style>
+    :root {
+        --rose-deep: #8b3a3a;
+        --gold: #c9a96e;
+        --cream: #fdf2f2;
+        --burgundy: #6b2d2d;
+    }
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #fdf2f2, #f5e6e6 50%, #fdf2f2);
+        color: var(--burgundy);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+    }
+    .card {
+        background: rgba(255,255,255,0.85);
+        border: 1px solid var(--gold);
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(139,58,58,0.15);
+        max-width: 640px;
+        width: 100%;
+        padding: 32px;
+    }
+    h1 {
+        font-style: italic;
+        font-size: 1.7rem;
+        margin: 0 0 6px;
+        text-align: center;
+    }
+    .subtitle {
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--rose-deep);
+        opacity: 0.85;
+        margin-bottom: 22px;
+    }
+    ol {
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin: 0 0 22px 20px;
+    }
+    .dropzone {
+        border: 2px dashed var(--gold);
+        border-radius: 12px;
+        padding: 28px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.25s;
+        background: var(--cream);
+    }
+    .dropzone:hover, .dropzone.drag {
+        background: #fbeaea;
+        border-color: var(--rose-deep);
+    }
+    .dropzone input { display: none; }
+    .dropzone .icon { font-size: 2.4rem; display: block; margin-bottom: 8px; }
+    .count {
+        margin: 16px 0 6px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-align: center;
+        color: var(--rose-deep);
+    }
+    textarea {
+        width: 100%;
+        min-height: 220px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.85rem;
+        padding: 12px;
+        border: 1px solid var(--gold);
+        border-radius: 10px;
+        background: #fffdfb;
+        color: #333;
+        resize: vertical;
+        margin-top: 6px;
+    }
+    .actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    button {
+        font-family: inherit;
+        font-size: 0.95rem;
+        padding: 11px 24px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+    .btn-primary {
+        background: var(--burgundy);
+        color: #fff;
+        box-shadow: 0 4px 14px rgba(107,45,45,0.3);
+    }
+    .btn-primary:hover { background: #7d3535; transform: translateY(-2px); }
+    .btn-primary:disabled { opacity: 0.45; cursor: default; transform: none; }
+    .btn-secondary {
+        background: transparent;
+        border: 2px solid var(--rose-deep);
+        color: var(--rose-deep);
+    }
+    .btn-secondary:hover { background: rgba(201,125,125,0.1); }
+    .hint {
+        font-size: 0.78rem;
+        color: var(--rose-deep);
+        opacity: 0.8;
+        text-align: center;
+        margin-top: 14px;
+        line-height: 1.5;
+    }
+    code {
+        background: rgba(201,169,110,0.18);
+        border-radius: 4px;
+        padding: 0 4px;
+        font-family: monospace;
+    }
+    .copied {
+        color: #2e7d32;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div class="card">
+    <h1>🎵 Playlist Builder</h1>
+    <p class="subtitle">Turn a folder of songs into <code>music/playlist.txt</code> in one step.</p>
+
+    <ol>
+        <li>Put your audio files in the <code>music</code> folder (next to <code>playlist.txt</code>).</li>
+        <li>Below, choose <strong>all of those same files</strong> at once (Ctrl/Cmd‑A in the picker selects everything).</li>
+        <li>Download the generated file and use it to replace <code>music/playlist.txt</code>.</li>
+    </ol>
+
+    <label class="dropzone" id="dropzone">
+        <span class="icon">📂</span>
+        <strong>Click to choose your song files</strong><br>
+        <span style="font-size:0.8rem;opacity:0.8">or drag &amp; drop them here — nothing is uploaded, this all happens on your device</span>
+        <input type="file" id="fileInput" multiple accept="audio/*">
+    </label>
+
+    <div class="count" id="count" style="display:none"></div>
+    <textarea id="output" placeholder="Your generated playlist.txt will appear here…" readonly></textarea>
+
+    <div class="actions">
+        <button class="btn-primary" id="downloadBtn" disabled>⬇️ Download playlist.txt</button>
+        <button class="btn-secondary" id="copyBtn" disabled>📋 Copy text</button>
+    </div>
+
+    <p class="hint" id="hint">
+        Tip: titles are auto‑generated from filenames (<code>our_first_dance.mp3</code> → "Our First Dance").
+        To set a custom title for any song, edit its line in the box above so it reads
+        <code>filename.mp3 | Custom Title</code> before downloading/copying.
+    </p>
+</div>
+
+<script>
+const dropzone   = document.getElementById('dropzone');
+const fileInput  = document.getElementById('fileInput');
+const output     = document.getElementById('output');
+const countEl    = document.getElementById('count');
+const downloadBtn = document.getElementById('downloadBtn');
+const copyBtn    = document.getElementById('copyBtn');
+const hint       = document.getElementById('hint');
+
+const AUDIO_EXT = /\.(mp3|wav|ogg|m4a|flac|aac|opus|wma|webm)$/i;
+
+const HEADER = `# ============================================================
+#  YOUR MUSIC LIBRARY — no code editing required!
+# ============================================================
+#
+# Every line below is one song from your "music" folder.
+# Auto-generated titles come from the filename. To rename a
+# song, edit its line to read:  filename.mp3 | Custom Title
+#
+# Lines starting with # are ignored.
+# ------------------------------------------------------------
+
+`;
+
+function prettify(filename) {
+    const base = filename.replace(/\.[a-zA-Z0-9]+$/, '');
+    return base
+        .replace(/[_-]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .replace(/\b\w/g, c => c.toUpperCase()) || filename;
+}
+
+function handleFiles(fileList) {
+    const files = Array.from(fileList)
+        .filter(f => AUDIO_EXT.test(f.name) || f.type.startsWith('audio/'))
+        .map(f => f.name)
+        .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+
+    if (!files.length) {
+        countEl.style.display = 'none';
+        output.value = '';
+        downloadBtn.disabled = true;
+        copyBtn.disabled = true;
+        return;
+    }
+
+    const lines = files.map(name => `${name} | ${prettify(name)}`);
+    output.value = HEADER + lines.join('\n') + '\n';
+    countEl.style.display = 'block';
+    countEl.textContent = `✅ ${files.length} song${files.length > 1 ? 's' : ''} ready`;
+    downloadBtn.disabled = false;
+    copyBtn.disabled = false;
+}
+
+fileInput.addEventListener('change', e => handleFiles(e.target.files));
+
+['dragover','dragenter'].forEach(ev => dropzone.addEventListener(ev, e => {
+    e.preventDefault();
+    dropzone.classList.add('drag');
+}));
+['dragleave','dragend','drop'].forEach(ev => dropzone.addEventListener(ev, e => {
+    dropzone.classList.remove('drag');
+}));
+dropzone.addEventListener('drop', e => {
+    e.preventDefault();
+    if (e.dataTransfer?.files?.length) handleFiles(e.dataTransfer.files);
+});
+
+downloadBtn.addEventListener('click', () => {
+    const blob = new Blob([output.value], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'playlist.txt';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+});
+
+copyBtn.addEventListener('click', async () => {
+    try {
+        await navigator.clipboard.writeText(output.value);
+    } catch (e) {
+        output.select();
+        document.execCommand('copy');
+    }
+    const original = hint.innerHTML;
+    hint.innerHTML = '<span class="copied">Copied! Paste it into music/playlist.txt ✅</span>';
+    setTimeout(() => hint.innerHTML = original, 2200);
+});
+</script>
+</body>
+</html>

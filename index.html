@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Romantic Gallery · Eternal Moments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Intro Splash -->
+    <div id="introSplash" class="intro-splash">
+        <div class="intro-text">Powered by NS Systems</div>
+    </div>
+
+    <!-- Password Overlay -->
+    <div id="passwordOverlay" class="password-overlay" style="display: none;">
+        <div class="password-box">
+            <h2>🔐 Enter Password</h2>
+            <input type="password" id="passwordInput" placeholder="Password" autocomplete="off">
+            <button id="passwordSubmit">Unlock</button>
+            <p id="passwordError" class="error-msg"></p>
+        </div>
+    </div>
+
+    <!-- Main App (hidden initially) -->
+    <div id="appContainer" class="app-container" style="display: none;">
+
+        <!-- Floating particles -->
+        <div class="particles-layer" id="particlesLayer" aria-hidden="true"></div>
+
+        <!-- Toast notifications -->
+        <div class="toast" id="toast"></div>
+
+        <!-- Music Panel (Playlist Player) -->
+        <div class="music-panel" id="musicPanel">
+            <button class="music-toggle" id="musicToggle" title="Play / Pause">🎵</button>
+            <div class="music-controls" id="musicControls">
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="40" title="Volume">
+                <button class="playlist-btn" id="playlistBtn" title="Show Playlist">📋</button>
+                <label class="upload-audio-label" title="Add songs">
+                    🎶
+                    <input type="file" id="audioFileInput" accept="audio/*" multiple hidden>
+                </label>
+            </div>
+            <!-- Slide‑out playlist -->
+            <div class="playlist-panel" id="playlistPanel">
+                <div class="playlist-header">🎼 Your Playlist</div>
+                <ul class="playlist-tracks" id="playlistTracks"></ul>
+                <div class="playlist-empty">No songs added yet.</div>
+                <div class="playlist-hint">📁 Songs placed in <code>/music</code> (listed in <code>music/playlist.txt</code>) appear here automatically for every visitor.</div>
+            </div>
+            <!-- Player secondary controls (next/prev/shuffle) -->
+            <div class="player-secondary" id="playerSecondary">
+                <button class="ctrl-btn" id="prevBtn" title="Previous">⏮️</button>
+                <button class="ctrl-btn" id="shuffleBtn" title="Shuffle">🔀</button>
+                <button class="ctrl-btn" id="nextBtn" title="Next">⏭️</button>
+                <span class="visualizer" id="visualizer" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="now-playing" id="nowPlaying">No track</span>
+            </div>
+        </div>
+
+        <!-- Gallery Header -->
+        <h1 class="gallery-title">Eternal Moments</h1>
+        <p class="gallery-subtitle">✦ A Romantic Gallery ✦</p>
+
+        <!-- Gallery stage: main frame + thumbnails -->
+        <div class="gallery-stage" id="galleryStage">
+            <div class="main-frame-wrapper" id="mainFrameWrapper">
+                <div class="ornate-frame" id="ornateFrame">
+                    <div class="frame-corner tl"></div>
+                    <div class="frame-corner tr"></div>
+                    <div class="frame-corner bl"></div>
+                    <div class="frame-corner br"></div>
+                    <div class="frame-inner">
+                        <img id="mainImage" src="" alt="Main romantic photo" draggable="false">
+                    </div>
+                </div>
+            </div>
+            <!-- Thumbnails are added here dynamically -->
+
+            <!-- Drag & drop hint -->
+            <div class="drop-hint" id="dropHint">💌 Drop photos here to add them</div>
+
+            <!-- Upload loading overlay -->
+            <div class="upload-loading" id="uploadLoading">
+                <div class="spinner"></div>
+                <span>Adding your memories…</span>
+            </div>
+        </div>
+
+        <!-- Control buttons -->
+        <div class="controls-row">
+            <button class="btn btn-upload" id="btnUpload">
+                <span class="btn-icon">💝</span> Add Photos
+            </button>
+            <button class="btn btn-reset" id="btnReset" style="display: none;">
+                <span class="btn-icon">🔄</span> Reset Gallery
+            </button>
+            <input type="file" id="fileInput" accept="image/*" multiple hidden>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
